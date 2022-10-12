@@ -7,13 +7,14 @@
 		"lint": "eslint ./src/**/*.ts",
 		"prettier": "npx prettier --check ./src/**/*.ts",
 		"prettier:fix": "npx prettier --write ./src/**/*.ts",
-    "build": "tsc -p tsconfig.json",
-    "cibuild": "tsc --noEmit -p tsconfig.json", 
-    "build:watch": "tsc -w -p tsconfig.json",
-    "build:release": "npm run clean && tsc -p tsconfig.release.json",
+    "clean": "rimraf coverage build tmp",
+		"build": "tsc -p tsconfig.json",
+		"cibuild": "tsc --noEmit -p tsconfig.json",
+		"build:watch": "tsc -w -p tsconfig.json",
+		"build:release": "npm run clean && tsc -p tsconfig.release.json",
 		"start:dev": "nodemon src/server.ts",
 		"start": "",
-		"test": "jest --watch --detectOpenHandles"
+		"test": "jest"
 	},
 	"keywords": [],
 	"author": "<Rick; netlemon@gmail.com>",
@@ -44,6 +45,7 @@
 		"supertest": "^6.2.4",
 		"ts-jest": "^29.0.3",
 		"ts-node": "^10.9.1",
+    "rimraf": "~3.0",
 		"tslib": "^2.4.0",
 		"typescript": "^4.8.4"
 	},
