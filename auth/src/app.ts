@@ -14,8 +14,8 @@ router.get('/', (context: Koa.Context) => {
 
 app.use(router.routes()).use(router.allowedMethods());
 
-app.listen(8080, () => {
-	console.log('Listening on port 8080');
+app.listen(3030, () => {
+	console.log('Listening on port 3030');
 });
 
 export default app;
